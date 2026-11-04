@@ -49,6 +49,13 @@ En VS Code, abre el notebook y selecciona el intérprete de `.venv`. Ejecuta las
 6. Análisis bivariado (3 relaciones).
 7. Respuestas a las preguntas y conclusiones.
 
+## 📄 Informe ejecutivo
+
+- [Informe ejecutivo (PDF)](informe/informe_ejecutivo.pdf)
+- [Versión Markdown](informe/informe_ejecutivo.md)
+
+Resumen de 3 páginas con las conclusiones y 3 gráficos, pensado para un público no técnico.
+
 ## 📈 Principales hallazgos
 
 - Los casos nuevos alcanzaron su máximo el **8 de enero de 2021** (295.121 en un día) y los fallecimientos el **12 de febrero de 2021** (5.427).
