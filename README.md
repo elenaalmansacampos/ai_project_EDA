@@ -2,6 +2,61 @@
 
 <img width="11520" height="3456" alt="Banner Proyectos" src="https://github.com/user-attachments/assets/a6561ed2-24e1-451a-b75d-07e0e85aed63" />
 
+## 🚀 Sobre este proyecto
+
+Análisis exploratorio de datos (EDA) de la evolución de la COVID-19 en Estados Unidos, desarrollado como **Nivel Esencial** del proyecto. El notebook trabaja con un registro diario por estado y responde a tres preguntas de investigación sobre la evolución temporal, las diferencias entre estados y la relación entre pruebas y casos.
+
+## 📂 Datos
+
+- **Fuente:** [COVID Tracking Project](https://covidtracking.com/data/download) (datos públicos hasta marzo de 2021).
+- **API:** `https://api.covidtracking.com/v1/states/daily.json`
+- **Volumen:** 20.780 filas y 56 columnas originales; un registro por estado o territorio y día (13/01/2020 – 07/03/2021).
+- La primera ejecución descarga los datos y los guarda en `data/covid_us.csv`. Las siguientes ejecuciones leen ese archivo local. El CSV no se versiona.
+
+## ⚙️ Instalación
+
+```bash
+git clone https://github.com/elenaalmansacampos/ai_project_EDA.git
+cd ai_project_EDA
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+También puedes usar `uv`:
+
+```bash
+uv venv .venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
+```
+
+## ▶️ Ejecución
+
+```bash
+jupyter lab notebooks/eda_covid19.ipynb
+```
+
+En VS Code, abre el notebook y selecciona el intérprete de `.venv`. Ejecuta las celdas de arriba abajo (**Run All**).
+
+## 🧠 Contenido del notebook
+
+1. Introducción, objetivos y preguntas de investigación.
+2. Carga de datos (local o API).
+3. Revisión de estructura: `shape`, `info()`, `head()` y `describe()`.
+4. Limpieza: duplicados, nulos, tipos y selección/renombrado de columnas.
+5. Análisis univariado (3 variables).
+6. Análisis bivariado (3 relaciones).
+7. Respuestas a las preguntas y conclusiones.
+
+## 📈 Principales hallazgos
+
+- Los casos nuevos alcanzaron su máximo el **8 de enero de 2021** (295.121 en un día) y los fallecimientos el **12 de febrero de 2021** (5.427).
+- **California, Texas, Florida y Nueva York** concentran el mayor número de casos acumulados.
+- Existe una **correlación positiva fuerte (r ≈ 0,90)** entre pruebas realizadas y casos positivos por estado.
+
+> Estos resultados no están normalizados por población y dependen de las diferencias de reporte entre estados.
+
 ## 📋 Planteamiento
 
 Ustedes trabajan en el equipo de datos de una consultora. El CEO de un cliente les entrega un conjunto de datos que nadie ha mirado con calma y les pide algo muy concreto: **que le muestren datos limpios, con sentido, y la historia que hay detrás de ellos**, antes de decidir qué hacer con esa información.
