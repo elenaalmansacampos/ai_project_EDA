@@ -4,5 +4,7 @@ requests
 matplotlib
 seaborn
 ipykernel
+ipywidgets
 nbconvert
 jupyterlab
+kagglehub
