@@ -4,7 +4,7 @@
 
 ## 🚀 Sobre este proyecto
 
-Análisis exploratorio de datos (EDA) de la evolución de la COVID-19 en Estados Unidos, desarrollado como **Nivel Esencial** del proyecto. El notebook trabaja con un registro diario por estado y responde a tres preguntas de investigación sobre la evolución temporal, las diferencias entre estados y la relación entre pruebas y casos.
+Análisis exploratorio de datos (EDA) de la evolución de la COVID-19 en Estados Unidos, desarrollado como **Nivel Esencial y Nivel Medio** del proyecto. El notebook trabaja con un registro diario por estado y responde a tres preguntas de investigación sobre la evolución temporal, las diferencias entre estados y la relación entre pruebas y casos.
 
 ## 📂 Datos
 
@@ -47,20 +47,23 @@ En VS Code, abre el notebook y selecciona el intérprete de `.venv`. Ejecuta las
 4. Limpieza: duplicados, nulos, tipos y selección/renombrado de columnas.
 5. Análisis univariado (3 variables).
 6. Análisis bivariado (3 relaciones).
-7. Respuestas a las preguntas y conclusiones.
+7. Nivel Medio: justificación de la limpieza, outliers con el IQR, `groupby`/`agg`, `pivot_table`, seis variables nuevas, matriz de correlación y tendencias temporales con media móvil.
+8. Respuestas a las preguntas y conclusiones.
 
 ## 📄 Informe ejecutivo
 
 - [Informe ejecutivo (PDF)](informe/informe_ejecutivo.pdf)
 - [Versión Markdown](informe/informe_ejecutivo.md)
 
-Resumen de 3 páginas con las conclusiones y 3 gráficos, pensado para un público no técnico.
+Resumen de 2 páginas con las conclusiones y 3 gráficos, pensado para un público no técnico. Las figuras se regeneran con `python informe/generar_figuras.py` (requiere `data/covid_us_clean.csv`, que genera el notebook) y el PDF con `python informe/generar_informe.py`.
 
 ## 📈 Principales hallazgos
 
-- Los casos nuevos alcanzaron su máximo el **8 de enero de 2021** (295.121 en un día) y los fallecimientos el **12 de febrero de 2021** (5.427).
+- Los casos nuevos alcanzaron su máximo el **8 de enero de 2021** (295.121 en un día) y los fallecimientos el **12 de febrero de 2021** (5.427). Diciembre de 2020 fue el mes con más casos (6,32 M) y enero de 2021 el de más fallecimientos (95.387).
 - **California, Texas, Florida y Nueva York** concentran el mayor número de casos acumulados.
 - Existe una **correlación positiva fuerte (r ≈ 0,90)** entre pruebas realizadas y casos positivos por estado.
+- La **positividad** más alta aparece en Idaho (26,8 %), Puerto Rico (24,9 %) y Kansas (23,3 %); la **tasa de letalidad** más alta, en Nueva Jersey (2,9 %), Massachusetts (2,8 %) y Connecticut (2,7 %).
+- Alrededor del **10-11 % de los incrementos diarios** son atípicos según el IQR; se conservan porque son picos reales o correcciones de reporte, no errores.
 
 > Estos resultados no están normalizados por población y dependen de las diferencias de reporte entre estados.
 
